@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell & Thrift</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f8f2;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: #d4edda;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .hero h1 {
+            color: #2c6e49;
+        }
+        .hero button {
+            padding: 12px 20px;
+            background-color: #2c6e49;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .how-it-works, .guidelines, .sell-form, .featured-listings, .trust-safety {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            margin: 20px auto;
+            width: 70%;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .how-it-works ol {
+            text-align: left;
+            margin: 0 auto;
+            display: inline-block;
+        }
+        .guidelines ul {
+            text-align: left;
+            margin: 0 auto;
+            display: inline-block;
+            list-style: none;
+            padding-left: 0;
+        }
+        .guidelines h3 {
+            color: #2c6e49;
+        }
+        .sell-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sell-form form {
+            width: 80%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .sell-form h2 {
+            grid-column: span 2;
+            text-align: center;
+        }
+        .sell-form input, .sell-form select, .sell-form textarea, .sell-form button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .sell-form textarea {
+            grid-column: span 2;
+            height: 80px;
+        }
+        .sell-form input[type="file"] {
+            grid-column: span 2;
+        }
+        .sell-form button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            grid-column: span 2;
+            cursor: pointer;
+        }
+
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .price-container input {
+            flex: 1;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .values-container, .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Thrift & Sell</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sell.html">Sell</a>
+            <a href="thrift.html">Buy</a>
+            <a href="recycle.html">Recycle</a>
+            <a href="about.html">About Us</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Sell Your Preloved Clothes & Give Them a New Home!</h1>
+        <p>Earn extra cash while promoting sustainability.</p>
+        <button onclick="location.href='sell_form.html'">Start Selling</button>
+    </section>
+
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <ol>
+            <li>Sign Up/Login to your account.</li>
+            <li>Upload images and details of your clothes.</li>
+            <li>Get verified and listed for sale.</li>
+            <li>Receive offers and sell your items.</li>
+            <li>Ship your items and get paid securely.</li>
+        </ol>
+    </section>
+
+    <section class="guidelines">
+        <h2>Guidelines for Selling</h2>
+        <h3>Clothing Condition & Quality Standards</h3>
+        <ul>
+            <li>✔ Only Sell Wearable Clothes – Items should be clean and undamaged.</li>
+            <li>✔ No Stains, Holes, or Odors – Ensure fresh and quality clothing.</li>
+            <li>✔ Authentic & Original Products – Avoid counterfeits.</li>
+        </ul>
+        <h3>Image Upload Guidelines</h3>
+        <ul>
+            <li>✔ Good Lighting – Use bright or natural light.</li>
+            <li>✔ Multiple Angles – Upload 3-5 images.</li>
+            <li>✔ Avoid Filters – Show the true color.</li>
+            <li>✔ Highlight Any Defects – Be transparent.</li>
+        </ul>
+    </section>
+
+    <section class="sell-form">
+        <h2>Sell Your Clothes</h2>
+        <form>
+            <input type="file" multiple accept="image/*">
+            <input type="text" placeholder="Title">
+            <textarea placeholder="Description"></textarea>
+            <select>
+                <option>Category</option>
+                <option>Tops</option>
+                <option>Bottoms</option>
+                <option>Footwear</option>
+                <option>Accessories</option>
+            </select>
+            <select>
+                <option>Condition</option>
+                <option>Like New</option>
+                <option>Gently Used</option>
+                <option>Fair Condition</option>
+            </select>
+            <div class="price-container">
+                <input type="number" placeholder="Original Price (₹)">
+                <input type="number" placeholder="Second-Hand Price (₹)">
+            </div>
+            <select>
+                <option>Shipping Method</option>
+                <option>Self-shipping</option>
+                <option>Platform-arranged pickup</option>
+            </select>
+            <select>
+                <option>Payment Preference</option>
+                <option>Bank Transfer</option>
+                <option>UPI</option>
+                <option>Wallet Balance</option>
+            </select>
+            <button type="submit">Submit Listing</button>
+        </form>
+    </section>
+
+    <section class="featured-listings">
+        <h2>Featured Listings</h2>
+        <p>Explore top trending second-hand fashion pieces.</p>
+    </section>
+
+    <section class="trust-safety">
+        <h2>Trust & Safety</h2>
+        <p>We ensure a secure and safe selling experience.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Thrift & Sell. All Rights Reserved.</p>
+        <p>
+            <a href="about.html">About Us</a> | 
+            <a href="contact.html">Contact</a> | 
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms & Conditions</a>
+        </p>
+    </footer>
+
+</body>
+</html>

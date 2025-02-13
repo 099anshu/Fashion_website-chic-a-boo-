@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrift Shop - Sustainable Fashion Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            display: flex;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar h3 {
+            margin-bottom: 1rem;
+        }
+        .sidebar select, .sidebar input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+        }
+        .products-container {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .products, .curated-collection-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .product-card {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+        .product-info {
+            margin: 0.5rem 0;
+        }
+        .product-info h4 {
+            margin: 0.5rem 0;
+        }
+        .product-info p {
+            margin: 0.2rem 0;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #388E3C;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .discount-banner {
+            background-color: #FF5722;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .values-container, .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sustainable Fashion Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="thrift.html">Thrift</a></li>
+                <li><a href="recycle.html">Recycle</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="discount-banner">
+        Get up to 50% off on selected thrift items! Limited time offer!
+    </div>
+
+    <main>
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <select id="category-select">
+                <option value="all">All Categories</option>
+                <option value="mens">Men's Clothing</option>
+                <option value="womens">Women's Clothing</option>
+                <option value="accessories">Accessories</option>
+                <option value="footwear">Footwear</option>
+                <option value="kids">Kids' Clothing</option>
+            </select>
+            <h3>Price Range</h3>
+            <label for="min-price">Min Price ($):</label>
+            <input type="number" id="min-price" name="min-price" min="0" placeholder="0">
+            <label for="max-price">Max Price ($):</label>
+            <input type="number" id="max-price" name="max-price" min="0" placeholder="50">
+        </aside>
+        
+        <aside class="sidebar">    
+            <section class="curated-collection">
+                <h3>Cart</h3>
+                <div class="curated-collection-items">
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="curated-collection">
+                <h3>Curated Collection Based on Your Quiz</h3>
+                <div class="curated-collection-items">
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside> 
+
+
+        <div class="products-container">
+            <h3>Curated Collection Based on Your Quiz</h3>
+            <section class="products">
+                
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Denim Jacket</h4>
+                        <p>Brand: Levi's</p>
+                        <p>Size: M</p>
+                        <p>Price: $25</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Denim Jacket</h4>
+                        <p>Brand: Levi's</p>
+                        <p>Size: M</p>
+                        <p>Price: $25</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Denim Jacket</h4>
+                        <p>Brand: Levi's</p>
+                        <p>Size: M</p>
+                        <p>Price: $25</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Denim Jacket</h4>
+                        <p>Brand: Levi's</p>
+                        <p>Size: M</p>
+                        <p>Price: $25</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Denim Jacket</h4>
+                        <p>Brand: Levi's</p>
+                        <p>Size: M</p>
+                        <p>Price: $25</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Denim Jacket</h4>
+                        <p>Brand: Levi's</p>
+                        <p>Size: M</p>
+                        <p>Price: $25</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Denim Jacket</h4>
+                        <p>Brand: Levi's</p>
+                        <p>Size: M</p>
+                        <p>Price: $25</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Denim Jacket</h4>
+                        <p>Brand: Levi's</p>
+                        <p>Size: M</p>
+                        <p>Price: $25</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Floral Dress</h4>
+                        <p>Brand: H&M</p>
+                        <p>Size: S</p>
+                        <p>Price: $30</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                    <div class="product-info">
+                        <h4>Leather Boots</h4>
+                        <p>Brand: Dr. Martens</p>
+                        <p>Size: 9</p>
+                        <p>Price: $45</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Add to Cart</a>
+                        <a href="#" class="btn">Like</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="curated-collection">
+                <h3>Curated Collection Based on Your Quiz</h3>
+                <div class="curated-collection-items">
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Eco-friendly T-shirt</h4>
+                            <p>Brand: Patagonia</p>
+                            <p>Size: L</p>
+                            <p>Price: $18</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="curated1.jpeg" alt="Eco-friendly T-shirt">
+                        <div class="product-info">
+                            <h4>Organic Cotton Dress</h4>
+                            <p>Brand: Everlane</p>
+                            <p>Size: M</p>
+                            <p>Price: $35</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="#" class="btn">Add to Cart</a>
+                            <a href="#" class="btn">Like</a>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+    </main>
+    <footer>
+        <p>&copy; 2025 Sustainable Fashion Hub. All rights reserved.</p>
+    </footer>
+</body>
+</html>

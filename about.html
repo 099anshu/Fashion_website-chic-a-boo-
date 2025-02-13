@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Thrift & Recycle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #4CAF50;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: white;
+            color: #4CAF50;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #d4edda;
+            color: #2c6e49;
+        }
+
+        /* Core Values Section */
+        .core-values {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .values-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .value-item {
+            width: 300px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Meet the Team Section */
+        .meet-the-team {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            width: 200px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .values-container, .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Thrift & Recycle</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sell.html">Sell</a>
+            <a href="thrift.html">Buy</a>
+            <a href="recycle.html">Recycle</a>
+            <a href="about.html" class="active">About Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Thrift & Recycle</h1>
+        <p>Join us in making fashion sustainable, one choice at a time.</p>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="core-values">
+        <h2>Our Core Values</h2>
+        <div class="values-container">
+            <div class="value-item">
+                <h3>Sustainability</h3>
+                <p>We believe in a sustainable future where fashion is environmentally friendly and reduces waste.</p>
+            </div>
+            <div class="value-item">
+                <h3>Affordability</h3>
+                <p>We make fashion accessible to everyone by providing affordable thrifted clothing options.</p>
+            </div>
+            <div class="value-item">
+                <h3>Community</h3>
+                <p>Building a community of like-minded individuals who support ethical and sustainable fashion choices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="meet-the-team">
+        <h2>Meet Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="member1.jpeg" alt="Team Member 1">
+                <p>John Doe - Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="member1.jpeg" alt="Team Member 2">
+                <p>Jane Smith - Designer</p>
+            </div>
+            <div class="team-member">
+                <img src="member1.jpeg" alt="Team Member 3">
+                <p>Emily White - Marketing</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Thrift & Recycle. All rights reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

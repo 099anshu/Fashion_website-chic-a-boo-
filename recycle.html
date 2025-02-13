@@ -1,0 +1,149 @@
+<!-- recycle.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycle Your Clothes</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f8f2;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: #d4edda;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .hero h1 {
+            color: #2c6e49;
+        }
+        .section {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            margin: 20px auto;
+            width: 70%;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .form select, .form button {
+            width: 80%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color:#4CAF50;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .values-container, .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Recycle & Reuse</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sell.html">Sell</a>
+            <a href="thrift.html">Buy</a>
+            <a href="recycle.html">Recycle</a>
+            <a href="about.html">About Us</a>
+      
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Recycle Your Clothes Responsibly!</h1>
+        <p>Find sustainable ways to give your old clothes a new life.</p>
+    </section>
+
+    <section class="section">
+        <h2>Condition Assessment</h2>
+        <form class="form">
+            <select>
+                <option value="">Select Condition</option>
+                <option value="heavily_damaged">Heavily Damaged - DIY Ideas</option>
+                <option value="moderate">Moderately Damaged - Donate</option>
+            </select>
+            <button type="button">Proceed</button>
+        </form>
+    </section>
+
+    <section class="section">
+        <h2>DIY Upcycling Guide</h2>
+        <p>Learn creative ways to reuse old clothes!</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/samplevideo" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="section">
+        <h2>Find Nearby Donation Centers</h2>
+        <p>Search for donation centers near you.</p>
+        <input type="text" placeholder="Enter your location" style="padding: 10px; width: 80%;">
+        <button type="button">Search</button>
+    </section>
+
+    <section class="section">
+        <h2>Donation Submission Form</h2>
+        <form class="form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Describe the clothes you want to donate" style="width: 80%; height: 80px;"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Recycle & Reuse. All rights reserved.</p>
+    </footer>
+</body>
+</html>

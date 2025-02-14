@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thrift Shop - Sustainable Fashion Hub</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -145,15 +145,22 @@
     <header>
         <h1>Sustainable Fashion Hub</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sell.html">Sell</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="thrift.html">Thrift</a></li>
-                <li><a href="recycle.html">Recycle</a></li>
-                <li><a href="about.html">About Us</a></li>
-                
-            </ul>
+            <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="#">fast fashion</a>
+                    <div class="dropdown-content">
+                      <a href="sell.html">shop</a>
+                      <a href="thrift.html">thrift</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <a href="#">re-think</a>
+                    <div class="dropdown-content">
+                      <a href="quiz.html">quiz time</a>
+                      <a href="recycle.html">recycle</a>
+                    </div>
+            <a href="about.html">About Us</a>
+            </div>
         </nav>
     </header>
 

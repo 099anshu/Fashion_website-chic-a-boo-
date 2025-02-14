@@ -4,121 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self-Reflection Quiz</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f8f2;
-            color: #333;
-            text-align: center;
-        }
-        header {
-            background-color: #4CAF50;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px;
-            background-color: #d4edda;
-            border-radius: 10px;
-            margin: 20px;
-        }
-        .hero h1 {
-            color: #2c6e49;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        .quiz-box {
-            border: 2px solid #000;
-            padding: 20px;
-            background-color: #d4edda;
-            margin: 20px 0;
-            text-align: left;
-            border-radius: 15px;
-            font-family: 'Verdana', sans-serif;
-        }
-        .category {
-            display: none;
-            width: 30%;
-            padding: 20px;
-            background-color: #D2691E;
-            color: white;
-            font-weight: bold;
-            border-radius: 10px;
-            margin: 10px;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-top: 10px;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .thrift { background-color: #4682B4; }
-        .sell { background-color: #FF6347; }
-        .recycle { background-color: #32CD32; }
-        .submit-btn { background-color: #4CAF50; }
-        .quiz-options input {
-            margin-right: 10px;
-        }
-        .result-section {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            border: 2px solid black;
-            background-color: white;
-            border-radius: 10px;
-        }
-        .result-box {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color:#4CAF50;
-            color: white;
-        }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 10px;
-                margin-top: 10px;
-            }
-
-            .values-container, .team-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }    
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         function analyzeQuiz(event) {
             event.preventDefault();
@@ -145,11 +31,21 @@
         <div class="logo">Recycle & Reuse</div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="sell.html">Sell</a>
-            <a href="quiz.html">Quiz</a>
-            <a href="thrift.html">Thrift</a>
-            <a href="recycle.html">Recycle</a>
+                <div class="dropdown">
+                    <a href="#">fast fashion</a>
+                    <div class="dropdown-content">
+                      <a href="#">shop</a>
+                      <a href="thrift.html">thrift</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <a href="#">re-think</a>
+                    <div class="dropdown-content">
+                      <a href="quiz.html">quiz time</a>
+                      <a href="recycle.html">recycle</a>
+                    </div>
             <a href="about.html">About Us</a>
+            </div>
         </nav>
     </header>
     <h1 class="header">Chic-a-boo - Self-Reflection Quiz</h1>

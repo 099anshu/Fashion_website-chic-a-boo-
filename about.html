@@ -4,152 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Thrift & Recycle</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        /* Header Styling */
-        header {
-            background-color: #4CAF50;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-
-        nav {
-            display: flex;
-            gap: 15px;
-            position: fixed;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        nav a:hover, nav a.active {
-            background-color: white;
-            color: #4CAF50;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #d4edda;
-            color: #2c6e49;
-        }
-
-        /* Core Values Section */
-        .core-values {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #fff;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .values-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .value-item {
-            width: 300px;
-            padding: 20px;
-            background-color: #ecf0f1;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Meet the Team Section */
-        .meet-the-team {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #fff;
-        }
-
-        .team-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .team-member {
-            width: 200px;
-            text-align: center;
-        }
-
-        .team-member img {
-            width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Footer Styling */
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        footer ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 10px;
-                margin-top: 10px;
-            }
-
-            .values-container, .team-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -158,11 +13,21 @@
         <div class="logo">Thrift & Recycle</div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="sell.html">Sell</a>
-            <a href="quiz.html">Quiz</a>
-            <a href="thrift.html">Thrift</a>
-            <a href="recycle.html">Recycle</a>
-            <a href="about.html" class="active">About Us</a>
+                <div class="dropdown">
+                    <a href="#">fast fashion</a>
+                    <div class="dropdown-content">
+                      <a href="sell.html">shop</a>
+                      <a href="thrift.html">thrift</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <a href="#">re-think</a>
+                    <div class="dropdown-content">
+                      <a href="quiz.html">quiz time</a>
+                      <a href="recycle.html">recycle</a>
+                    </div>
+            <a href="about.html">About Us</a>
+            </div>
         </nav>
     </header>
 

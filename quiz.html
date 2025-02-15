@@ -25,22 +25,23 @@
         }
         nav {
             display: flex;
-            gap: 15px;
-            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            max-width: 600px;
         }
         nav a, .dropdown > a {
             text-decoration: none;
             color: white;
-            padding: 10px;
-            display: block;
+            padding: 10px 15px;
+            font-weight: bold;
         }
         .dropdown {
             position: relative;
-            display: inline-block;
         }
         .dropdown-content {
             display: none;
             position: absolute;
+            left: 0;
             background-color: white;
             min-width: 150px;
             box-shadow: 0px 4px 8px rgba(0,0,0,0.2);

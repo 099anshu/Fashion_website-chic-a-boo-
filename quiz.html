@@ -59,7 +59,46 @@
         .dropdown-content a:hover {
             background-color: #ddd;
         }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .result-section {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
     </style>
+    <script>
+        function analyzeQuiz(event) {
+            event.preventDefault();
+            let clothesOwned = document.querySelector('input[name="clothes_owned"]:checked')?.value;
+            let dailyWear = document.querySelector('input[name="daily_wear"]:checked')?.value;
+            let forgottenClothes = document.querySelector('input[name="forgotten_clothes"]:checked')?.value;
+            
+            let category = "OPTIMUM CONSUMPTION";
+            if (clothesOwned === "Less than 30" && dailyWear === "All" && forgottenClothes === "Rarely") {
+                category = "UNDERCONSUMPTION";
+            } else if (clothesOwned === "More than 60" && dailyWear === "Few" && forgottenClothes === "All the time!") {
+                category = "OVERCONSUMPTION";
+            }
+            
+            document.getElementById("result-section").style.display = "block";
+            document.getElementById("underconsumption").style.display = category === "UNDERCONSUMPTION" ? "block" : "none";
+            document.getElementById("optimumconsumption").style.display = category === "OPTIMUM CONSUMPTION" ? "block" : "none";
+            document.getElementById("overconsumption").style.display = category === "OVERCONSUMPTION" ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -83,5 +122,23 @@
             <a href="about.html">About Us</a>
         </nav>
     </header>
+    <div class="quiz-container">
+        <h2>Self-Reflection Quiz</h2>
+        <form onsubmit="analyzeQuiz(event)">
+            <div class="question">
+                <label>How many clothes do you own?</label><br>
+                <input type="radio" name="clothes_owned" value="Less than 30"> Less than 30<br>
+                <input type="radio" name="clothes_owned" value="30-60"> 30-60<br>
+                <input type="radio" name="clothes_owned" value="More than 60"> More than 60<br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result-section" class="result-section">
+            <h3>Quiz Result:</h3>
+            <p id="underconsumption" style="display:none;">You fall under UNDERCONSUMPTION</p>
+            <p id="optimumconsumption" style="display:none;">You have OPTIMUM CONSUMPTION</p>
+            <p id="overconsumption" style="display:none;">You fall under OVERCONSUMPTION</p>
+        </div>
+    </div>
 </body>
 </html>

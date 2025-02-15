@@ -8,131 +8,57 @@
     <script>
         function analyzeQuiz(event) {
             event.preventDefault();
-            
             let clothesOwned = document.querySelector('input[name="clothes_owned"]:checked')?.value;
             let dailyWear = document.querySelector('input[name="daily_wear"]:checked')?.value;
             let forgottenClothes = document.querySelector('input[name="forgotten_clothes"]:checked')?.value;
-            let packingEssentials = document.querySelector('input[name="packing_essentials"]:checked')?.value;
-            let clothesDisposal = document.querySelector('input[name="clothes_disposal"]:checked')?.value;
-
+            
             let category = "OPTIMUM CONSUMPTION";
-
-            if (
-                clothesOwned === "Less than 30" && dailyWear === "All" &&
-                forgottenClothes === "Rarely" && packingEssentials === "Less than 10"
-            ) {
+            if (clothesOwned === "Less than 30" && dailyWear === "All" && forgottenClothes === "Rarely") {
                 category = "UNDERCONSUMPTION";
-            } 
-            else if (
-                clothesOwned === "More than 60" && dailyWear === "Few" &&
-                forgottenClothes === "All the time!" && clothesDisposal === "Throw them away"
-            ) {
+            } else if (clothesOwned === "More than 60" && dailyWear === "Few" && forgottenClothes === "All the time!") {
                 category = "OVERCONSUMPTION";
             }
-
+            
             document.getElementById("result-section").style.display = "block";
             document.getElementById("underconsumption").style.display = category === "UNDERCONSUMPTION" ? "block" : "none";
             document.getElementById("optimumconsumption").style.display = category === "OPTIMUM CONSUMPTION" ? "block" : "none";
             document.getElementById("overconsumption").style.display = category === "OVERCONSUMPTION" ? "block" : "none";
-
-            // Smooth transition effect
-            document.getElementById("result-section").style.opacity = "1";
-        }
-
-        function resetQuiz() {
-            document.querySelector("form").reset();
-            document.getElementById("result-section").style.display = "none";
         }
     </script>
+    <style>
+        .quiz-box { margin-bottom: 20px; }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">Recycle & Reuse</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <div class="dropdown">
-                <a href="#">fast fashion</a>
-                <div class="dropdown-content">
-                    <a href="#">shop</a>
-                    <a href="thrift.html">thrift</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#">re-think</a>
-                <div class="dropdown-content">
-                    <a href="quiz.html">quiz time</a>
-                    <a href="recycle.html">recycle</a>
-                </div>
-            </div>
-            <a href="about.html">About Us</a>
-        </nav>
-    </header>
-
-    <h1 class="header">Chic-a-boo - Self-Reflection Quiz</h1>
+    <h1 class="header">Self-Reflection Quiz</h1>
     <div class="container">
         <form onsubmit="analyzeQuiz(event)">
             <div class="quiz-box">
                 <h2>How many clothes do you own?</h2>
-                <div class="quiz-options">
-                    <input type="radio" name="clothes_owned" value="Less than 30"> Less than 30<br>
-                    <input type="radio" name="clothes_owned" value="30-60"> 30-60<br>
-                    <input type="radio" name="clothes_owned" value="More than 60"> More than 60<br>
-                </div>
+                <input type="radio" name="clothes_owned" value="Less than 30"> Less than 30<br>
+                <input type="radio" name="clothes_owned" value="30-60"> 30-60<br>
+                <input type="radio" name="clothes_owned" value="More than 60"> More than 60<br>
             </div>
-
             <div class="quiz-box">
-                <h2>How many do you wear on a daily basis?</h2>
-                <div class="quiz-options">
-                    <input type="radio" name="daily_wear" value="All"> All<br>
-                    <input type="radio" name="daily_wear" value="Many"> Many<br>
-                    <input type="radio" name="daily_wear" value="Few"> Few<br>
-                </div>
+                <h2>How many clothes do you wear daily?</h2>
+                <input type="radio" name="daily_wear" value="All"> All<br>
+                <input type="radio" name="daily_wear" value="Many"> Many<br>
+                <input type="radio" name="daily_wear" value="Few"> Few<br>
             </div>
-
             <div class="quiz-box">
-                <h2>How often do you find clothes in your wardrobe that you forgot you owned?</h2>
-                <div class="quiz-options">
-                    <input type="radio" name="forgotten_clothes" value="Rarely"> Rarely<br>
-                    <input type="radio" name="forgotten_clothes" value="Sometimes"> Sometimes<br>
-                    <input type="radio" name="forgotten_clothes" value="All the time!"> All the time!<br>
-                </div>
+                <h2>How often do you find forgotten clothes in your wardrobe?</h2>
+                <input type="radio" name="forgotten_clothes" value="Rarely"> Rarely<br>
+                <input type="radio" name="forgotten_clothes" value="Sometimes"> Sometimes<br>
+                <input type="radio" name="forgotten_clothes" value="All the time!"> All the time!<br>
             </div>
-
-            <div class="quiz-box">
-                <h2>If you had to pack your most essential clothes for a month, how many would you take?</h2>
-                <div class="quiz-options">
-                    <input type="radio" name="packing_essentials" value="Less than 10"> Less than 10<br>
-                    <input type="radio" name="packing_essentials" value="10-20"> 10-20<br>
-                    <input type="radio" name="packing_essentials" value="More than 20"> More than 20<br>
-                </div>
-            </div>
-
-            <div class="quiz-box">
-                <h2>What do you usually do when your clothes don’t fit or go out of style?</h2>
-                <div class="quiz-options">
-                    <input type="radio" name="clothes_disposal" value="Donate them"> Donate them<br>
-                    <input type="radio" name="clothes_disposal" value="Store them just in case"> Store them just in case<br>
-                    <input type="radio" name="clothes_disposal" value="Throw them away"> Throw them away<br>
-                </div>
-            </div>
-
-            <button type="submit" class="button submit-btn">Submit</button>
-            <button type="button" class="button reset-btn" onclick="resetQuiz()">Reset</button>
+            <button type="submit">Submit</button>
         </form>
-
-        <div id="result-section" class="result-section" style="display: none; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <h2>Analysis of Quiz</h2>
-            <p>Your consumption pattern is analyzed as follows:</p>
-            <div class="result-box">
-                <div id="underconsumption" class="category">UNDERCONSUMPTION <button class="button thrift">THRIFT</button></div>
-                <div id="optimumconsumption" class="category">OPTIMUM CONSUMPTION <button class="button thrift">THRIFT</button> <button class="button sell">SELL</button> <button class="button recycle">RECYCLE</button></div>
-                <div id="overconsumption" class="category">OVERCONSUMPTION <button class="button sell">SELL</button> <button class="button recycle">RECYCLE</button></div>
-            </div>
+        <div id="result-section" style="display:none;">
+            <h2>Quiz Result:</h2>
+            <div id="underconsumption" style="display:none;">You have UNDERCONSUMPTION</div>
+            <div id="optimumconsumption" style="display:none;">You have OPTIMUM CONSUMPTION</div>
+            <div id="overconsumption" style="display:none;">You have OVERCONSUMPTION</div>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2025 Recycle & Reuse. All rights reserved.</p>
-    </footer>
 </body>
 </html>
